@@ -1,7 +1,12 @@
 'use strict';
 
-const cssNode = document.createElement('style');
-document.head.appendChild(cssNode);
+let cssNode;
+
+// Ensure we are in a browser environment before accessing document
+if (typeof document !== "undefined") {
+  cssNode = document.createElement('style');
+  document.head.appendChild(cssNode);
+}
 
 /**
  * Register our extra CSS with Blockly.
